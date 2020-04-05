@@ -1,11 +1,12 @@
 @ECHO OFF
 
 REM check if argument was passed in and it is a valid directory
-if [%1]==[] goto no_arguments
-if not exist %1 goto not_a_directory
+REM if [%1]==[] goto no_arguments
+REM if not exist %1 goto not_a_directory
 
 REM initializing variables
-set working_directory=%1
+REM set working_directory=%1
+set working_directory=%~dp0
 set data_directory=%working_directory%\data_files
 set log_directory=%working_directory%\logs
 set log_archive_directory=%log_directory%\archive
