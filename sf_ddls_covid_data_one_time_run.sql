@@ -8,7 +8,7 @@ use role SECURITYADMIN
 ;
 
 --create service account for ingestion
-create user INGEST_SVC_ACCT 
+create or replace user INGEST_SVC_ACCT 
 	password = '&{pwd}' 
 	MUST_CHANGE_PASSWORD = FALSE
 ;
