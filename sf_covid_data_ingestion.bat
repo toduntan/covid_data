@@ -1,11 +1,6 @@
 @ECHO OFF
 
-REM check if argument was passed in and it is a valid directory
-REM if [%1]==[] goto no_arguments
-REM if not exist %1 goto not_a_directory
-
 REM initializing variables
-REM set working_directory=%1
 set working_directory=%~dp0
 set data_directory=%working_directory%\data_files
 set log_directory=%working_directory%\logs
@@ -48,17 +43,6 @@ REM monitor started tasks
   timeout /t 5 >nul
   tasklist /fi "windowtitle eq +++covid_data_ingestion+++*" |find "cmd.exe" >nul && goto :loop
 
-goto end
-
-:no_arguments
-	echo %date% %time% [FAILURE] Directory argument not supplied.
-	exit /B 1
-
-:not_a_directory
-	echo %date% %time% [FAILURE] Directory argument does not exist or permission denied.
-	exit /B 1
-
-:end
-	REM process complete.
+REM process complete.
 	echo %date% %time% [SUCCESS] Process complete. See individual logs for details or issues. >> %logfile%
 	exit 0
