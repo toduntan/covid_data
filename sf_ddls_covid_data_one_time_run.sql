@@ -43,10 +43,10 @@ create or replace table time_series_covid19_confirmed_global
 (
 	Province_State		varchar,
 	Country_Region		varchar,
-	Lat								varchar,
-	Long							varchar,
-	Date							varchar,
-	Cases							varchar
+	Lat					varchar,
+	Long				varchar,
+	Date				varchar,
+	Cases				varchar
 )
 ;
 
@@ -54,10 +54,10 @@ create or replace table time_series_covid19_deaths_global
 (
 	Province_State		varchar,
 	Country_Region		varchar,
-	Lat								varchar,
-	Long							varchar,
-	Date							varchar,
-	Cases							varchar
+	Lat					varchar,
+	Long				varchar,
+	Date				varchar,
+	Cases				varchar
 )
 ;
 
@@ -65,47 +65,47 @@ create or replace table time_series_covid19_recovered_global
 (
 	Province_State		varchar,
 	Country_Region		varchar,
-	Lat								varchar,
-	Long							varchar,
-	Date							varchar,
-	Cases							varchar
+	Lat					varchar,
+	Long				varchar,
+	Date				varchar,
+	Cases				varchar
 )
 ;
 
 create or replace table time_series_covid19_confirmed_US
 (
-	UID									varchar,
-	iso2								varchar,
-	iso3								varchar,
-	code3								varchar,
-	FIPS								varchar,
-	Admin2							varchar,
-	Province_State			varchar,
-	Country_Region			varchar,
-	Lat									varchar,
-	Long_								varchar,
-	Combined_Key				varchar,
-	Date								varchar,
-	Cases								varchar
+	UID					varchar,
+	iso2				varchar,
+	iso3				varchar,
+	code3				varchar,
+	FIPS				varchar,
+	Admin2				varchar,
+	Province_State		varchar,
+	Country_Region		varchar,
+	Lat					varchar,
+	Long_				varchar,
+	Combined_Key		varchar,
+	Date				varchar,
+	Cases				varchar
 )
 ;
 
 create or replace table time_series_covid19_deaths_US
 (
-	UID									varchar,
-	iso2								varchar,
-	iso3								varchar,
-	code3								varchar,
-	FIPS								varchar,
-	Admin2							varchar,
-	Province_State			varchar,
-	Country_Region			varchar,
-	Lat									varchar,
-	Long_								varchar,
-	Combined_Key				varchar,
-	Population					varchar,
-	Date								varchar,
-	Cases								varchar
+	UID					varchar,
+	iso2				varchar,
+	iso3				varchar,
+	code3				varchar,
+	FIPS				varchar,
+	Admin2				varchar,
+	Province_State		varchar,
+	Country_Region		varchar,
+	Lat					varchar,
+	Long_				varchar,
+	Combined_Key		varchar,
+	Population			varchar,
+	Date				varchar,
+	Cases				varchar
 )
 ;
 
