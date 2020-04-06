@@ -8,10 +8,10 @@ set log_directory=%working_directory%\logs
 set log_archive_directory=%log_directory%\archive
 set logfile=%log_directory%\%~n0.log
 
-REM silently delete archived logs and archive previous run's log files.  Two total runs of logs are kept, current & previous
+REM silently delete archived logs.  Two total runs of logs are kept, current & previous
 del /s %log_archive_directory%\*.log >nul 2>&1
 
-REM move previous run's log files into archive directory
+REM archive previous run's log files
 move %log_directory%\*.log %log_archive_directory%
 
 REM initializing log file
@@ -21,7 +21,7 @@ REM silently delete archived CSVs.  Two total runs of CSVs are kept, current & p
 echo %date% %time% [INFO] Deleting archived CSVs... >> %logfile%
 del /s %data_archive_directory%\*.csv >nul 2>&1
 
-REM archive previous run's CSV files.
+REM archive previous run's CSV files
 echo %date% %time% [INFO] Archiving previous run's CSVs... >> %logfile%
 move %data_directory%\*.csv %data_archive_directory%
 
