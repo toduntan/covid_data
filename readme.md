@@ -17,4 +17,4 @@
 - Schedule primary bat file with windows task scheduler [sf_covid_data_ingestion.bat](./sf_covid_data_ingestion.bat)
 
 ## TO DO
-- Adjust R script to use relative paths or have path passed in from batch file.
+- ~~Adjust R script to use relative paths or have path passed in from batch file.~~ done 2020-04-06
