@@ -27,7 +27,7 @@ move %data_directory%\*.csv %data_archive_directory%
 
 REM download and unpivot source files
 echo %date% %time% [INFO] Downloading and unpivoting files from source... >> %logfile%
-Rscript %working_directory%\R_extract_covid_data_from_github.R
+Rscript %working_directory%\R_extract_covid_data_from_github.R %working_directory%
 echo %date% %time% [INFO] Source files extracted. >> %logfile%
 
 REM using start command to run these in parallel
