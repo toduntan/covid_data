@@ -4,9 +4,6 @@ library(readxl)
 library(stringr)
 library(lubridate)
 
-# Proxy needed for fetching data from Github
-#Sys.setenv(HTTPS_PROXY="http://webproxy.merck.com:8081")
-
 #declare JHU url directory
 jhu_url_stub<-"https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data"
 
@@ -47,7 +44,6 @@ time_series_covid19_confirmed_US <- suppressWarnings(melt(fread(paste0(jhu_url_s
 time_series_covid19_deaths_US <- suppressWarnings(melt(fread(paste0(jhu_url_stub,covid19_deaths_US_url)), id.vars = c(1:12), variable.name = "Date", value.name = "Cases"))
 
 #Stores dataframes as CSV files in appropriate directory
-#write.csv(covid19map, "C:\\projects\\covid_data\\data_files\\covid19map.csv",row.names = FALSE)
 write.csv(time_series_covid19_confirmed_global, "C:\\projects\\covid_data\\data_files\\time_series_covid19_confirmed_global.csv",row.names = FALSE)
 write.csv(time_series_covid19_deaths_global, "C:\\projects\\covid_data\\data_files\\time_series_covid19_deaths_global.csv",row.names = FALSE)
 write.csv(time_series_covid19_recovered_global, "C:\\projects\\covid_data\\data_files\\time_series_covid19_recovered_global.csv",row.names = FALSE)
