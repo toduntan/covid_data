@@ -12,7 +12,7 @@
 			- user with SYSADMIN and SECURITYADMIN access  
 - Create project directory in windows.
 - Either clone project using git or download files from GitLab: https://gitlab.com/bformus/covid_data
-- From the command prompt, run [sf_covid_data_one_time_setup.bat](./sf_covid_data_one_time_setup.bat) including password argument for user INGEST_SVC_ACCT that is created during setup process.  
+- From the command prompt, run [sf_covid_data_one_time_setup.bat](./setup_scripts/sf_covid_data_one_time_setup.bat) located in setup_scripts folder including password argument for user INGEST_SVC_ACCT that is created during setup process.  
 	- Ex: sf_covid_data_one_time_setup.bat \<password\>
 - Schedule primary bat file with windows task scheduler [sf_covid_data_ingestion.bat](./sf_covid_data_ingestion.bat)
 
