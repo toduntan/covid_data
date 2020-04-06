@@ -3,18 +3,32 @@
 REM initializing variables
 set working_directory=%~dp0
 set data_directory=%working_directory%\data_files
+set data_archive_directory=%data_directory%\archive
 set log_directory=%working_directory%\logs
 set log_archive_directory=%log_directory%\archive
 set logfile=%log_directory%\%~n0.log
 
-REM silently delete archived logs and archive last run's log files - 2 total runs of logs are kept, current & previous
+REM silently delete archived logs and archive previous run's log files.  Two total runs of logs are kept, current & previous
 del /s %log_archive_directory%\*.log >nul 2>&1
 
 REM move previous run's log files into archive directory
 move %log_directory%\*.log %log_archive_directory%
 
 REM initializing log file
-echo %date% %time% [INFO] Starting load... > %logfile%
+echo %date% %time% [INFO] Starting ingestion... > %logfile%
+
+REM silently delete archived CSVs.  Two total runs of CSVs are kept, current & previous.
+echo %date% %time% [INFO] Deleting archived CSVs... >> %logfile%
+del /s %data_archive_directory%\*.csv >nul 2>&1
+
+REM archive previous run's CSV files.
+echo %date% %time% [INFO] Archiving previous run's CSVs... >> %logfile%
+move %data_directory%\*.csv %data_archive_directory%
+
+REM download and unpivot source files
+echo %date% %time% [INFO] Downloading and unpivoting files from source... >> %logfile%
+Rscript %working_directory%\R_extract_covid_data_from_github.R
+echo %date% %time% [INFO] Source files extracted. >> %logfile%
 
 REM using start command to run these in parallel
 
