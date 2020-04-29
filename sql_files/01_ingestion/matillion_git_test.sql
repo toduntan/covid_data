@@ -1,4 +1,6 @@
-create table matillion_git_test
+{
+"result": "create table matillion_git_test
 (
     col varchar
-);
+);"
+}
