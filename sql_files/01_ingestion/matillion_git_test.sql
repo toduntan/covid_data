@@ -1,4 +1,4 @@
-create or replace table Git_test
+ create or replace table Git_test
 (
     Province_State        varchar,
     
@@ -6,5 +6,5 @@ create or replace table Git_test
 ;
 
 
-INSERT INTO table_name (province_state)
-VALUES (New York);
+INSERT INTO Git_test (province_state)
+VALUES ("New York");
