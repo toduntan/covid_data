@@ -1,4 +1,10 @@
-create table matillion_git_test
+create or replace table Git_test
 (
-    col varchar
-);
+    Province_State        varchar,
+    
+)
+;
+
+
+INSERT INTO table_name (province_state)
+VALUES (New York);
