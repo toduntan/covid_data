@@ -11,6 +11,5 @@
 
 INSERT INTO events(event_name, visitor,properties, browser)
 VALUES ('1', 'safari', 'james', 'mac')
- 
-);"
+ ;"
 }
