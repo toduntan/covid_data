@@ -1,4 +1,4 @@
- create table Git_test
+ create or replace table Git_test
 (
     Province_State        varchar (max),
     
